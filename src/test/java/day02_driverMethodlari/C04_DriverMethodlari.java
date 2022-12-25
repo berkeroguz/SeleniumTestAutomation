@@ -7,24 +7,27 @@ public class C04_DriverMethodlari {
     public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver","src/drivers/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
 
+        WebDriver driver= new ChromeDriver();
         driver.manage().window().maximize();
 
         driver.navigate().to("https://www.amazon.com");
-        // get ile aynı işlevi yapar
-        Thread.sleep(3000);
+        // get ile ayni islevi yapar
 
+        Thread.sleep(3000);
         driver.get("https://www.wisequarter.com");
 
-        // yeniden amazon'a dönelim
+        Thread.sleep(3000);
+        // yeniden amazon'a donelim
         driver.navigate().back();
 
-        //tekrar wisequarter.com'a gidelim
-
+        Thread.sleep(3000);
+        // tekrar wisequarter.com'a gitmek istersek
         driver.navigate().forward();
 
-        driver.close();
+
+        Thread.sleep(3000);
+        driver.quit();
 
     }
 }
